@@ -1,0 +1,59 @@
+step to start
+==========================
+Microsoft Windows [Version 10.0.17134.345]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Users\DELL>cd Desktop
+
+C:\Users\DELL\Desktop>cd "docments containing all folders on desktop"
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop>cd solr-6
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6> cd bin
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\bin>solr start
+Backing up C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\server\logs\solr.log
+        1 file(s) moved.
+Backing up C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\server\logs\solr_gc.log
+        1 file(s) moved.
+Waiting up to 30 to see Solr running on port 8983
+Started Solr server on port 8983. Happy searching!
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\bin>
+
+==============================================================
+step to create core/collection
+===========================================================
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\bin>solr create  -c IsThirdYear
+
+Copying configuration to new core instance directory:
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\server\solr\IsThirdYear
+
+Creating new core 'IsThirdYear' using command:
+http://localhost:8983/solr/admin/cores?action=CREATE&name=IsThirdYear&instanceDir=IsThirdYear
+
+{
+  "responseHeader":{
+    "status":0,
+    "QTime":928},
+  "core":"IsThirdYear"}
+
+
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\bin>
+
+========================================================
+to post data into your core
+===============================
+
+
+
+
+java -Durl=http://localhost:8983/solr/myprojects/update/extract?literal.id=doc5 
+-Dtype=application/pdf -jar post.jar doc5.pdf
+==================================================
+
+ =========to delete core/collection====
+
+C:\Users\DELL\Desktop\docments containing all folders on desktop\solr-6\bin>solr delete -c corename
